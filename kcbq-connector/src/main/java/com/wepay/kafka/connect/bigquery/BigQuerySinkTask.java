@@ -173,7 +173,8 @@ public class BigQuerySinkTask extends SinkTask {
     if (config.getBoolean(config.SANITIZE_FIELD_NAME_CONFIG)) {
       convertedRecord = FieldNameSanitizer.replaceInvalidKeys(convertedRecord);
     }
-    return RowToInsert.of(getRowId(record), convertedRecord);
+//    return RowToInsert.of(getRowId(record), convertedRecord);
+    return RowToInsert.of(convertedRecord);
   }
 
   private String getRowId(SinkRecord record) {

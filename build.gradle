@@ -22,7 +22,8 @@ project.ext {
     apacheHttpClientVersion = '4.5.6'
     avroVersion = '1.8.1'
     debeziumVersion = '0.6.1'
-    googleCloudVersion = '1.79.0'
+    googleCloudBigQueryVersion = '1.123.2'
+    googleCloudStorageVersion = '1.113.1'
     googleAuthVersion = '0.9.0'
     googleCloudGsonVersion = '2.8.5'
     ioConfluentVersion = '5.5.0'
@@ -209,8 +210,8 @@ project(':kcbq-connector') {
         compile (
                 project(':kcbq-api'),
 
-                "com.google.cloud:google-cloud-bigquery:$googleCloudVersion",
-                "com.google.cloud:google-cloud-storage:$googleCloudVersion",
+                "com.google.cloud:google-cloud-bigquery:$googleCloudBigQueryVersion",
+                "com.google.cloud:google-cloud-storage:$googleCloudStorageVersion",
                 "com.google.auth:google-auth-library-oauth2-http:$googleAuthVersion",
                 "com.google.code.gson:gson:$googleCloudGsonVersion",
                 "org.slf4j:slf4j-api:$slf4jVersion",
@@ -266,7 +267,7 @@ project('kcbq-api') {
     }
 
     dependencies {
-        compile "com.google.cloud:google-cloud-bigquery:$googleCloudVersion"
+        compile "com.google.cloud:google-cloud-bigquery:$googleCloudBigQueryVersion"
 
         compileOnly "org.apache.kafka:connect-api:$kafkaVersion"
     }
